@@ -22,6 +22,7 @@ PRODUCT_PACKAGES += \
     libdlbpreg \
     liboem_specific \
     libspatializerparamstorage \
+    libstagefright_foundation-atmos \
     libstagefright_foundation-spatial \
     libdlbvol \
     libswdap \
@@ -29,6 +30,7 @@ PRODUCT_PACKAGES += \
     libswspatializer \
     libswvqe \
     vendor.dolby.hardware.dms@2.0-impl \
+    vendor.dolby.hardware.dms@2.0-atmos.so \
     vendor.dolby.hardware.dms@2.0-spatial \
     vendor.dolby.hardware.dms@2.0 \
     vendor.dolby.hardware.dms.xml \

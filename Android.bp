@@ -363,6 +363,34 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libstagefright_foundation-atmos",
+    owner: "sony",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libstagefright_foundation-atmos.so",
+            ],
+            shared_libs: [
+                "libbinder",
+                "libutils",
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libdlbvol",
     owner: "sony",
     strip: {
@@ -374,13 +402,14 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/soundfx/libdlbvol.so",
             ],
             shared_libs: [
+                "libspatializerparamstorage",
                 "liblog",
                 "libutils",
                 "libcutils",
                 "libaudioutils",
-                "libstagefright_foundation-v33",
+                "libstagefright_foundation-atmos",
                 "libdlbpreg",
-                "vendor.dolby.hardware.dms@2.0",
+                "vendor.dolby.hardware.dms@2.0-atmos.so",
                 "libc++",
                 "libc",
                 "libm",
@@ -406,6 +435,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/soundfx/libswdap.so",
             ],
             shared_libs: [
+                "libspatializerparamstorage",
                 "liblog",
                 "libutils",
                 "libcutils",
@@ -414,7 +444,7 @@ cc_prebuilt_library_shared {
                 "libhidlbase",
                 "libstagefright_foundation-v33",
                 "libdlbpreg",
-                "vendor.dolby.hardware.dms@2.0",
+                "vendor.dolby.hardware.dms@2.0-atmos.so",
                 "libc++",
                 "libc",
                 "libm",
@@ -569,6 +599,34 @@ cc_prebuilt_library_shared {
         android_arm64: {
             srcs: [
                 "proprietary/vendor/lib64/vendor.dolby.hardware.dms@2.0-spatial.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.dolby.hardware.dms@2.0-atmos.so",
+    owner: "sony",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.dolby.hardware.dms@2.0-atmos.so.so",
             ],
             shared_libs: [
                 "libhidlbase",
